@@ -1,7 +1,7 @@
 {
 	"author": "Jaekwon Park",
 	"name": "node-httpd",
-	"description": "http server",
+	"description": "The httpd running on Node.js",
 	"version": "0.0.1",
 	"repository": {},
 	"main": "./src/main",

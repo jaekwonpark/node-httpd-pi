@@ -1,4 +1,4 @@
-node-server
+node-httpd
 ===========
 
-HTTP server
+HTTP demon running on Node.js
