@@ -1,0 +1,18 @@
+{
+	"author": "Jaekwon Park",
+	"name": "node-httpd",
+	"description": "http server",
+	"version": "0.0.1",
+	"repository": {},
+	"main": "./src/main",
+	"bin": {
+		"node-httpd": "./bin/node-httpd"
+	},
+	"dependencies": {},
+	"devDependencies": {},
+	"optionalDependencies": {},
+	"engines": {
+		"node": "*"
+	}
+}
+
