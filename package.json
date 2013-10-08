@@ -1,12 +1,12 @@
 {
 	"author": "Jaekwon Park",
-	"name": "node-httpd",
-	"description": "The httpd running on Node.js",
+	"name": "node-httpd-pi",
+	"description": "The httpd running on Node.js to control raspberry pi",
 	"version": "0.0.1",
 	"repository": {},
 	"main": "./src/main",
 	"bin": {
-		"node-httpd": "./bin/node-httpd"
+		"node-httpd-pi": "./bin/node-httpd-pi"
 	},
 	"dependencies": {},
 	"devDependencies": {},
