@@ -1,0 +1,21 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	var socket = io.connect('http://localhost:3000');
+	socket.on('status', function (data) {
+		console.log(data);
+	});
+
+	function toggle(button_id) {
+		var bgcolor = document.getElementById(button_id).style.backgroundColor;
+
+		if (document.getElementById(button_id).style.backgroundColor == 'rgb(0, 0, 255)') {
+			socket.emit('status', 0);
+			document.getElementById(button_id).style.backgroundColor = '#ff0000';
+		}
+		else {
+			socket.emit('status', 1);
+			document.getElementById(button_id).style.backgroundColor = '#0000ff';
+		}
+	}
+</script>
+<button id="myButton" onClick="toggle(this.id);" style="height:500px; width:300px; background:#ff0000"></button>
