@@ -1,21 +1,54 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
-	var socket = io.connect('http://localhost:3000');
-	socket.on('status', function (data) {
-		console.log(data);
-	});
-
 	function toggle(button_id) {
 		var bgcolor = document.getElementById(button_id).style.backgroundColor;
 
+		var url = '';
 		if (document.getElementById(button_id).style.backgroundColor == 'rgb(0, 0, 255)') {
-			socket.emit('status', 0);
-			document.getElementById(button_id).style.backgroundColor = '#ff0000';
+			url = 'http://192.168.1.114:8084/index.html?status=1';
+			remoteUrlCall(url, 'GET', null, function(data) {
+				document.getElementById(button_id).style.backgroundColor = '#ff0000';
+			});
 		}
 		else {
-			socket.emit('status', 1);
-			document.getElementById(button_id).style.backgroundColor = '#0000ff';
+			url = 'http://192.168.1.114:8084/index.html?status=1';
+			remoteUrlCall(url, 'GET', null, function(data) {
+				document.getElementById(button_id).style.backgroundColor = '#0000ff';
+			});
 		}
 	}
+
+
+
+
+function remoteUrlCall(url, method, params, onSuccess, onError)
+{
+    var xmlHttp = new XMLHttpRequest();
+    method = method.toUpperCase();
+
+    xmlHttp.onreadystatechange = function() {
+        if (this.readyState === 4) {
+            // onSuccess
+            if (this.status == 200 && typeof onSuccess == 'function') {
+                onSuccess(this.responseText);
+            }
+            else if (typeof onError == 'function') {
+                onError();
+            }
+        }
+    }
+
+    xmlHttp.open(method, url, true);
+    if (method == 'POST') {
+        xmlHttp.setRequestHeader('Content-length', params.length);
+        xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    }
+
+
+    xmlHttp.send(params);
+
+    return xmlHttp;
+}
+
 </script>
 <button id="myButton" onClick="toggle(this.id);" style="height:500px; width:300px; background:#ff0000"></button>
