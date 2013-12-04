@@ -3,6 +3,9 @@ node-httpd-pi
 
 HTTP demon running on Node.js to control raspberry pi
 
+prerequisites :
+1. gpio-admin : checkout from https://github.com/quick2wire/quick2wire-gpio-admin and build then install
+2. pi-gpio : npm install -g pi-gpio
 install with -g option then create /etc/init.d/httpd and input followings then save
 
 -----------------------------
