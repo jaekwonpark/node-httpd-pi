@@ -1,8 +1,8 @@
 {
 	"author": "Jaekwon Park",
 	"name": "node-httpd-pi",
-	"description": "The httpd running on Node.js to control raspberry pi",
-	"version": "0.0.12",
+	"description": "The httpd running on Node.js to control raspberry pi GPIO",
+	"version": "0.1.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jaekwonpark/node-httpd-pi"
